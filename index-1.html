@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Haulwise Logistics – Freight, Warehousing & Last-Mile Delivery</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#eef0ec;--surface:#fff;--ink:#1b2a2f;--muted:#55656a;--line:#cbd2cc;--accent:#f5a300;--on-accent:#1b2a2f;--dark:#1b2a2f;--on-dark:#eef0ec;
+--display:'Archivo','Arial Narrow',Arial,sans-serif;--body:'IBM Plex Sans',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121b1e;--surface:#1b282c;--ink:#eef0ec;--muted:#9fb0b4;--line:#33454a;--dark:#0b1214;--on-dark:#eef0ec}}
+:root[data-theme="dark"]{--bg:#121b1e;--surface:#1b282c;--ink:#eef0ec;--muted:#9fb0b4;--line:#33454a;--dark:#0b1214;--on-dark:#eef0ec}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:16px}
+.logo{font:900 1.35rem var(--display);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:22px;height:22px;background:var(--accent);display:inline-block;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)}
+nav{display:flex;gap:22px;font-weight:500}
+nav a{text-decoration:none}nav a:hover{text-decoration:underline}
+@media(max-width:620px){nav a:not(.cta){display:none}}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font:600 1rem var(--body);padding:12px 22px;border:0;border-radius:4px;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}
+.hero{padding:40px 0 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+h1{font:900 clamp(2.4rem,6.5vw,4.4rem)/.98 var(--display);letter-spacing:-.02em;margin:0 0 18px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:46ch;margin:0 0 26px}
+.track{background:var(--surface);border:2px solid var(--ink);border-radius:6px;padding:22px;position:relative}
+.track::before{content:"";position:absolute;left:0;right:0;top:-2px;height:8px;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 7px,var(--ink) 7px 8px,transparent 8px 13px)}
+.track h2{font:800 1.3rem var(--display);margin:8px 0 4px}
+.track p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.row{display:flex;gap:8px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:4px;padding:11px 12px;width:100%}
+label{display:block;font-weight:600;font-size:.92rem;margin-bottom:5px}
+.steps{list-style:none;margin:18px 0 0;padding:0}
+.steps li{position:relative;padding:0 0 14px 28px;color:var(--muted)}
+.steps li::before{content:"";position:absolute;left:3px;top:6px;width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:var(--surface)}
+.steps li::after{content:"";position:absolute;left:8px;top:20px;bottom:-4px;width:2px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps li.done{color:var(--ink)}
+.steps li.done::before{background:var(--ink);border-color:var(--ink)}
+.steps li.now{color:var(--ink);font-weight:600}
+.steps li.now::before{background:var(--accent);border-color:var(--ink)}
+.msg{font-size:.92rem;margin-top:10px;min-height:1.3em}
+section{padding:56px 0}
+h2.t{font:800 clamp(1.8rem,4vw,2.5rem)/1.05 var(--display);letter-spacing:-.01em;margin:0 0 28px;max-width:20ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:2px solid var(--ink)}
+.svc{padding:22px 22px 26px 0;border-bottom:1px solid var(--line)}
+.svc h3{font:800 1.2rem var(--display);margin:0 0 6px}
+.svc p{margin:0;color:var(--muted)}
+.band{background:var(--dark);color:var(--on-dark)}
+.band .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px}
+.band strong{display:block;font:900 2.4rem/1 var(--display);color:var(--accent)}
+.band span{opacity:.85}
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:820px){.quote{grid-template-columns:1fr}}
+form{display:grid;gap:14px;background:var(--surface);border:1.5px solid var(--line);padding:22px;border-radius:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#top"><i></i>Haulwise</a>
+  <nav><a href="#services">Services</a><a href="#about">Why us</a><a href="#quote" class="btn">Get a quote</a></nav>
+</header>
+
+<main id="top" class="hero">
+  <div>
+    <h1>Your cargo, there on the day we said.</h1>
+    <p class="lead">Road freight, warehousing and last-mile delivery across the United States, with a tracking number on every shipment from pickup to signature.</p>
+    <a class="btn" href="#quote">Get a quote</a>
+  </div>
+  <div class="track" role="region" aria-label="Track a shipment">
+    <h2>Track a shipment</h2>
+    <p>Enter your tracking number. Try <b>HW-48213</b> for a demo.</p>
+    <form class="row" id="trackForm" style="padding:0;border:0;background:none;display:flex">
+      <input id="tn" aria-label="Tracking number" placeholder="HW-48213" autocomplete="off">
+      <button class="btn" type="submit">Track</button>
+    </form>
+    <div class="msg" id="tmsg" aria-live="polite"></div>
+    <ol class="steps" id="steps" hidden></ol>
+  </div>
+</main>
+</div>
+
+<section id="services"><div class="wrap">
+  <h2 class="t">What we move, and how</h2>
+  <div class="grid">
+    <div class="svc"><h3>Road freight</h3><p>Full and part loads between major cities, with GPS-tracked trucks and fixed pickup windows.</p></div>
+    <div class="svc"><h3>Warehousing</h3><p>Secure storage with stock counts you can check any day, plus pick, pack and dispatch.</p></div>
+    <div class="svc"><h3>Last-mile delivery</h3><p>Doorstep delivery for online stores, with SMS updates and proof of delivery.</p></div>
+    <div class="svc"><h3>Customs and clearance</h3><p>Port clearing and paperwork for imports and exports, handled by licensed customs brokers.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="about"><div class="wrap">
+  <div><strong>50</strong><span>states covered, coast to coast</span></div>
+  <div><strong>98%</strong><span>of shipments delivered on the promised date</span></div>
+  <div><strong>24/7</strong><span>dispatch desk you can call or message</span></div>
+</div></section>
+
+<section id="quote"><div class="wrap quote">
+  <div>
+    <h2 class="t">Tell us what needs moving</h2>
+    <p class="lead">Send the details and our team replies with a price and pickup date within one working day.</p>
+  </div>
+  <form id="qForm" novalidate>
+    <div class="two">
+      <div><label for="from">Pickup city</label><input id="from" placeholder="e.g. Chicago, IL" required></div>
+      <div><label for="to">Delivery city</label><input id="to" placeholder="e.g. Dallas, TX" required></div>
+    </div>
+    <div><label for="type">Service</label>
+      <select id="type"><option>Road freight</option><option>Warehousing</option><option>Last-mile delivery</option><option>Customs and clearance</option></select></div>
+    <div><label for="email">Email or phone</label><input id="email" required></div>
+    <div><label for="note">Cargo details</label><textarea id="note" rows="3" placeholder="Weight, size, number of items"></textarea></div>
+    <button class="btn" type="submit">Request quote</button>
+    <div class="msg" id="qmsg" aria-live="polite"></div>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 Haulwise Logistics Inc.</span><span>hello@haulwise.example · +1 (800) 555-0142</span></div></footer>
+
+<script>
+const stages=["Pickup booked","Collected from sender","At Chicago hub","In transit to Dallas","Out for delivery","Delivered"];
+document.getElementById('trackForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=document.getElementById('tn').value.trim().toUpperCase(),m=document.getElementById('tmsg'),s=document.getElementById('steps');
+  if(!v){m.textContent="Enter a tracking number to continue.";s.hidden=true;return}
+  if(v!=="HW-48213"){m.textContent="We can't find "+v+". Check the number on your receipt and try again.";s.hidden=true;return}
+  m.textContent="Chicago to Dallas · expected tomorrow by 5 pm";
+  s.innerHTML=stages.map((t,i)=>'<li class="'+(i<3?'done':i===3?'now':'')+'">'+t+'</li>').join('');
+  s.hidden=false;
+});
+document.getElementById('qForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const m=document.getElementById('qmsg');
+  const ok=['from','to','email'].every(id=>document.getElementById(id).value.trim());
+  m.textContent=ok?"Quote request sent. We will reply within one working day.":"Fill in pickup city, delivery city and a contact before sending.";
+});
+</script>
+</body>
+</html>
